@@ -1,0 +1,31 @@
+# LangChain ecosystem
+langchain
+langchain-community
+langchain-core
+
+# Embeddings & NLP
+sentence-transformers
+transformers
+torch
+
+# Vector Database
+faiss-cpu
+
+# PDF processing
+pypdf
+
+# Text splitting (comes with langchain but safe)
+tiktoken
+
+# Reranking
+sentence-transformers  # (CrossEncoder)
+
+# Keyword + Hybrid search
+rank-bm25
+
+# Backend
+flask
+
+# Utils
+numpy
+scikit-learn
