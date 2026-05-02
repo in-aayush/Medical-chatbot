@@ -25,12 +25,9 @@ def load_db():
 
 def load_llm():
     generator = pipeline(
-        "text2text-generation",
+        "text-generation",   # ✅ fixed
         model="google/flan-t5-base",
-        max_length=512,
-        min_length=80,
-        do_sample=True,
-        temperature=0.7
+        max_length=512
     )
     return generator
 
@@ -105,21 +102,14 @@ def get_answer(query):
         history_text += f"User: {q}\nBot: {a}\n"
 
     prompt = f"""
-    You are a professional medical assistant.
-
-    Use only relevant context.
-    Ignore unrelated topics.
-
-    Chat History:
-    {history_text}
+    Answer the question in a clear and simple way.
 
     Context:
     {context}
 
-    Question:
-    {query}
+    Question: {query}
 
-    Answer clearly:
+    Answer:
     """
 
     response = llm(prompt)
